@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Shopsite using VuE</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+
+      <div id="app">
+      <header >
+        <h1>The Ticker <span>your watch shop</span> </h1>
+        <div class="cart">
+          <a href="#"> <img src="https://assets.webiconspng.com/uploads/2017/09/Shopping-Cart-PNG-Image-72455.png" alt=""></a>
+          <a href="#"> {{cart}} items in cart</a>
+        </div>
+        <div class="logIn">
+          <a href="#">Log In</a>
+        </div>
+      </header>
+        <div class="main">
+          <div class="inner">
+
+            <div class="item item1">
+              <p class="available" v-if="stockItemOne > 10">Yes</p>
+              <p class="available" v-else-if="stockItemOne <= 10 && stockItemOne > 0">Almost sold out. Only {{stockItemOne}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://www.fitbit.com/global/content/dam/fitbit/global/pdp/devices/sense/hero-static/carbon/sense-HeroStatic-carbon-side.png" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemOne" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemOne">$  {{priceItemOne}}</h3>
+              <button :disabled="stockItemOne <= 0" class="button" v-on:click="stockItemOne -= 1; cart += 1" :class="{ disabledButton: stockItemOne <= 0}">Add to cart</button>
+            </div>
+            <div class="item item2">
+              <p class="available" v-if="stockItemTwo > 10"> </p>
+              <p class="available" v-else-if="stockItemTwo <= 10 && stockItemTwo > 0">Almost sold out. Only {{stockItemTwo}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://cdn03.plentymarkets.com/5efrsgo5j3zq/item/images/106291/full/WD67260-04.jpg" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemTwo" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemTwo">$  {{priceItemTwo}}</h3>
+              <button :disabled="stockItemTwo <= 0" class="button" v-on:click="stockItemTwo -= 1; cart += 1" :class="{ disabledButton: stockItemTwo <= 0}">Add to cart</button>
+            </div>
+            <div class="item item3">
+              <p class="available" v-if="stockItemThree > 10"> </p>
+              <p class="available" v-else-if="stockItemThree <= 10 && stockItemThree > 0">Almost sold out. Only {{stockItemThree}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://i.otto.de/i/otto/52edca61-8878-482b-87fa-b6fe24563d2e/mutoy-smartwatch-fitness-tracker-uhr-1-69-zoll-hd-voll-touchscreen-ip67-wasserdicht-fitness-uhr-mit-pulsmesser-schrittzaehler-schlafmonitor-stoppuhr-musiksteuerung-temperaturmessung-sportuhr-aktivitaetstracker-uhren-smart-watch-fuer-damen-herren-kompatibel-ios-android-smartwatch-gold.jpg?$formatz$" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemThree" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemThree">$  {{priceItemThree}}</h3>
+              <button :disabled="stockItemThree <= 0" class="button" v-on:click="stockItemThree -= 1; cart += 1"  :class="{ disabledButton: stockItemFive <= 0}" :class="{ disabledButton: stockItemThree <= 0}">Add to cart</button>
+            </div>
+            <div class="item item4">
+              <p class="available" v-if="stockItemFour > 10"></p>
+              <p class="available" v-else-if="stockItemFour <= 10 && stockItemFour > 0">Almost sold out. Only {{stockItemFour}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://www.lidl.de/assets/2874d949c19797a52f97834bb153aae5.jpeg" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemFour" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemFour">$  {{priceItemFour}}</h3>
+              <button :disabled="stockItemFour <= 0" class="button" v-on:click="stockItemFour -= 1; cart += 1" :class="{ disabledButton: stockItemFour <= 0}">Add to cart</button>
+            </div>
+            <div class="item item5">
+              <p class="available" v-if="stockItemFive > 10"> </p>
+              <p class="available" v-else-if="stockItemFive <= 10 && stockItemFive > 0">Almost sold out. Only {{stockItemFive}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://cdn.shopify.com/s/files/1/0593/3282/1164/products/cheetah-watches-cheetah-collection-cheetah-watches-for-men-cheetah-fiit-s-cheetah-watches-406711_1200x1200.jpg?v=1635334191" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleitemFive" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemFive">$  {{priceItemFive}}</h3>
+              <button :disabled="stockItemFive <= 0"  class="button" v-on:click="stockItemFive -= 1; cart += 1" :class="{ disabledButton: stockItemFive <= 0}">Add to cart</button>
+            </div>
+            <div class="item item6">
+              <p class="available" v-if="stockItemSix > 10"> </p>
+              <p class="available" v-else-if="stockItemSix <= 10 && stockItemSix > 0">Almost sold out. Only {{stockItemSix}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://4d325d724f.edge.storage/res/product_1000/1f05e6a5-8783-483d-867e-dca3c36e83e8.jpg" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleitemSix" class="onSale">On Sale!</h2>
+              <h3 class="price priceitemSix">$  {{priceItemSix}}</h3>
+              <button class="button" v-on:click="stockItemSix -= 1; cart += 1">Add to cart</button>
+            </div>
+            <div class="item item7">
+              <p class="available" v-if="stockItemSeven > 10"> </p>
+              <p class="available" v-else-if="stockItemSeven <= 10 && stockItemSeven > 0">Almost sold out. Only {{stockItemSeven}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://contents.mediadecathlon.com/p2114236/k$23a07a6a2eebba0e7be229d6b1963d7f/sq/smartwatch-sportuhr-bonism-id205g-rosa.jpg?format=auto&f=800x0&quality=40" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemSeven" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemSeven">$  {{priceItemSeven}}</h3>
+              <button :disabled="stockItemSeven <= 0" class="button" v-on:click="stockItemSeven -= 1; cart += 1" :class="{ disabledButton: stockItemSeven <= 0}">Add to cart</button>
+            </div>
+            <div class="item item8">
+              <p class="available" v-if="stockItemEight > 10"> </p>
+              <p class="available" v-else-if="stockItemEight <= 10 && stockItemEight > 0">Almost sold out. Only {{stockItemEight}} left.</p>
+              <p class="available" v-else>Unavailable</p>
+              <a href="#"><img src="https://cdn.idealo.com/folder/Product/201949/6/201949641/s1_produktbild_gross/leotec-smartwatch-multisport-omena-pink.jpg" alt=""></a>
+              <h2 class="itemName"></h2>
+              <h2 v-if="onSaleItemEight" class="onSale">On Sale!</h2>
+              <h3 class="price priceItemEight">$  {{priceItemEight}}</h3>
+              <button :disabled="stockItemEight <= 0" class="button" v-on:click="stockItemEight -= 1; cart += 1" :class="{ disabledButton: stockItemEight <= 0}">Add to cart</button>
+            </div>
+            <div class="item item9">
+                <button id="review-button" >Check out reviews</button>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <ul>
+            <li> <p>@2022</p> </li>
+            <li id="myWebsite" > <a href="https://www.alexanderlucaswolf.com">My website</a> </li>
+            <li> This is an exercise website.</li>
+          </ul>
+        </footer>
+
+       </div>
+
+      <script src="./main.js"></script>
+
+      <script>
+        const mountedApp = app.mount('#app')
+      </script>
+
+</html>

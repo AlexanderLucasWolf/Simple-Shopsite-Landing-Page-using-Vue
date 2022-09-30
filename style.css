@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: black;
+  padding: 1.5rem;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+}
+
+header h1{
+  margin-left: 3rem;
+  color: goldenrod;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+header span {
+  color: goldenrod;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.cart a{
+  color: white;
+  right: 5%;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.cart{
+  width: 12rem;
+  padding: .5rem;
+  margin-left: auto;
+  margin-top: -2rem;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.cart:hover{
+  opacity: .9;
+}
+
+.cart img{
+  width: 1.5rem;
+  align-content: center;
+  margin-top: -.5rem;
+}
+
+.logIn{
+  width: 6%;
+  padding: .5rem;
+  margin-left: 75vw;
+  margin-top: -2.4rem;
+  cursor: pointer;
+  border: 1px solid white;
+  text-align: center;
+  border: 3px solid goldenrod;
+}
+
+.logIn:hover{
+  opacity: .8;
+}
+
+.logIn a{
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+  height: 110vh;
+  background-color: #f2f2f2;
+}
+
+.main {
+  margin-top: 7.5rem;
+}
+
+.inner{
+  width: 82.5%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 2.5  rem;
+}
+
+.item img{
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item{
+  transition: .2s;
+  width: 350px;
+  height: 450px;
+  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.item:hover{
+  margin-top: -.5rem;
+  transition: .2s;
+}
+
+
+
+.item button {
+  transition: 1s;
+  width: inherit;
+  margin-top: 2rem;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.item button:hover{
+  background: goldenrod;
+  transition: .5s;
+}
+
+.disabledButton:hover{
+  cursor: not-allowed;
+}
+
+.price {
+  letter-spacing: .5px;
+  margin-top: .5rem;
+  margin-bottom: -1rem;
+}
+
+.onSale{
+  color: goldenrod;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.available {
+  margin-top: 1rem;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+#review-button{
+  width: 75%;
+  margin: auto;
+  border-radius: 8px;
+}
+
+footer {
+  background-image: linear-gradient(to bottom, #f2f2f2, #49473b);
+  height: 10rem;
+}
+
+footer ul{
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 90%;
+  font-family: "Roboto", sans-serif;
+  padding-top: 4rem;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+footer li a{
+  text-decoration: none;
+  color: black;
+}
+
+#myWebsite {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin-left: 6rem;
+}
+
+#myWebsite:hover{
+  margin-top: .1rem;
+}
